@@ -55,7 +55,7 @@ We adopt the baseline architecture setting as described in the paper.
 
 ***Decoder***:
 + 2 layers of LSTM cells of ```hidden dim=512```
-+ ```character embedding = 128```
++ ```character embedding dim=128```
 
 ***Optimization***:
 + ```batchsize=64```
