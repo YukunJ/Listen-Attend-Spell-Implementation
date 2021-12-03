@@ -33,11 +33,18 @@ The overall architecture could be visualized as belows: (pics taken from the pap
 
 #### File Structure
 
-    src
-    data
-    checkpoint
-    output
-    pic
+    src/
+        attention.py (attention module)
+        model.py (locked dropou, pyramidal lstm layer, encoder, decoder)
+        trainer.py (train, valid, inference and attention/graident plot helper)
+        dataset.py (dataset, dataloader)
+        search.py (greedy search, beam search)
+        utils.py (letter list, index to letter trans dictionary)
+        main.py (main driver, hyperparameter setting)
+    data/ (the train, valid, test dataset storage)
+    checkpoint/ (model checkpoint during training)
+    output/ (inference result)
+    pic/
     Listen-Attend-Spell.pdf
     requirements.txt
     README.md
