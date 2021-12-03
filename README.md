@@ -35,7 +35,7 @@ The overall architecture could be visualized as belows: (pics taken from the pap
 
     src/
         attention.py (attention module)
-        model.py (locked dropou, pyramidal lstm layer, encoder, decoder)
+        model.py (locked dropout, pyramidal lstm layer, encoder, decoder)
         trainer.py (train, valid, inference and attention/graident plot helper)
         dataset.py (dataset, dataloader)
         search.py (greedy search, beam search)
