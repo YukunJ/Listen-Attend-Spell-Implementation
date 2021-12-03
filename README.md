@@ -4,6 +4,12 @@ This is the PyTorch-based model implementation of the paper ["Listen, Attend and
 
 This is an  attention-based encoder-decoder model transcribing speech utterance to text in a character-based manner. It utilizes the pyramidal RNN layer to reduce the length of input utterance and attention mechanism to decode information captured by the encoder.
 
+The overall architecture could be visualized as belows: (pic from the paper)
+
+![avatar](pic/Listener.png)
+
+![avatar](pic/Speller.png)
+
 ---
 
 #### Highlights of the model implementation
