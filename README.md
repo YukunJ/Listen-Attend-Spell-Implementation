@@ -27,7 +27,7 @@ This is an  attention-based encoder-decoder model transcribing speech utterance 
 
 #### Where to get the data?
 
-Since the data is too big to be put on the github, we packaged the data source and upload it to google drive for download ([link](https://drive.google.com/file/d/19EPsCrQwdvPoezw7UV_c47Qykyij8T1s/view?usp=sharing)). Please unzip the file and put the files on the ```data/``` folder.
+Since the data is too big to be put on the github, we package the data source and upload it to google drive for download ([link](https://drive.google.com/file/d/19EPsCrQwdvPoezw7UV_c47Qykyij8T1s/view?usp=sharing)). Please unzip the file and put the files in the ```data/``` folder.
 
 ---
 
