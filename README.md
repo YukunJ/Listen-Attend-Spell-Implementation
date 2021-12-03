@@ -12,7 +12,7 @@ This is an  attention-based encoder-decoder model transcribing speech utterance 
     The utterance is typically quite long so as to exceed 1000. This make the attention mechanism difficult to focus on the right part of the speech during decoding and slower to converge. To tackle this problem, each pyramial LSTM layer reduce the length of input utterance by half, by concatenating the adjacent two. Essentially, after one layer of pyramial LSTM layer, a batch data of size ```(batch_size, seq_len, feat_size)``` becomes ```(batch_size, seq_len / 2, feat_size * 2)```. If the ```seq_len``` is odd, we just chop off the last one.
 
 2. Locked Dropout
-    We self-implement and insert locked dropout layer in between pyramidal lstm layers. Locked dropout is the way apply the same dropout mask to every time step. This is an efficient way to enhance the generalizability of the encoder. The whole encoder's baseline architecture is therefore [lstm -> plstm -> locked-dropout -> plstm -> locked-dropout -> plstm]
+    We self-implement and insert locked dropout layer in between pyramidal lstm layers. Locked dropout is the way apply the same dropout mask to every time step. This is an efficient way to enhance the generalizability of the encoder. The whole encoder's baseline architecture is therefore ```[lstm -> plstm -> locked-dropout -> plstm -> locked-dropout -> plstm]```
     
 3. Attention Mechanism
     The model utilizes the attention mechanism to help the decoder to focus on the right part of the speech utterance during decoding. There are many ways of implementin the attention. In this implementation, we use linear transformation to produce ```attention_key``` and ```attention_value``` to be coupled with ```query``` during each timestamp's decoding.
