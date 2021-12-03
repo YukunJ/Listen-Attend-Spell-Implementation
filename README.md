@@ -31,6 +31,20 @@ The overall architecture could be visualized as belows: (pics taken from the pap
 
 ---
 
+#### File Structure
+
+    src
+    data
+    checkpoint
+    output
+    pic
+    Listen-Attend-Spell.pdf
+    requirements.txt
+    README.md
+    
+
+---
+
 #### Where to get the data?
 
 Since the data is too big to be put on the github, we package the data source and upload it to google drive for download ([link](https://drive.google.com/file/d/19EPsCrQwdvPoezw7UV_c47Qykyij8T1s/view?usp=sharing)). Please unzip the file and put the files in the ```data/``` folder.
