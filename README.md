@@ -8,19 +8,19 @@ This is an  attention-based encoder-decoder model transcribing speech utterance 
 
 #### Highlights of the model implementation
 
-1. **Pyramidal LSTM Layer**
+1. **Pyramidal LSTM Layer** ->
     The utterance is typically quite long so as to exceed 1000. This make the attention mechanism difficult to focus on the right part of the speech during decoding and slower to converge. To tackle this problem, each pyramial LSTM layer reduce the length of input utterance by half, by concatenating the adjacent two. Essentially, after one layer of pyramial LSTM layer, a batch data of size ```(batch_size, seq_len, feat_size)``` becomes ```(batch_size, seq_len / 2, feat_size * 2)```. If the ```seq_len``` is odd, we just chop off the last one.
 
-2. **Locked Dropout**
+2. **Locked Dropout** -> 
     We self-implement and insert locked dropout layer in between pyramidal lstm layers. Locked dropout is the way apply the same dropout mask to every time step. This is an efficient way to enhance the generalizability of the encoder. The whole encoder's baseline architecture is therefore ```[lstm -> plstm -> locked-dropout -> plstm -> locked-dropout -> plstm]```
     
-3. **Attention Mechanism**
+3. **Attention Mechanism** -> 
     The model utilizes the attention mechanism to help the decoder to focus on the right part of the speech utterance during decoding. There are many ways of implementin the attention. In this implementation, we use linear transformation to produce ```attention_key``` and ```attention_value``` to be coupled with ```query``` during each timestamp's decoding.
 
-4. **Teacher Forcing**
+4. **Teacher Forcing** -> 
     It's difficult at early stage for the model to learn because if the decoding at current tiemstamp ```t``` is wrong, then this wrong character's embedding would be feed into ```t+1``` timestamp's decoding, making it even harder to get it right. To tackle this problem, we utilize teacher forcing techniques. Essentially, with a high probability (90% initially), the embedding of `y_{t-1}` to be fed into the decoding process for ```y_t``` would be the ground truth regardless of what the model predicts on last timestamp. As the training process goes, we could gradually decrease the teacher forcing rate and let the model rely wholly on itself. 
 
-5. **Beam Search**
+5. **Beam Search** -> 
     To fully explore the possible decoding path, we implement beam search in the implementation. However, since it's pretty slow once the beam widthg get bigger, we only used it during validation and inference, and greedy search is applied in the training epochs.
 
 ---
