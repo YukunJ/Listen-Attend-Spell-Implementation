@@ -1,0 +1,11 @@
+numpy
+pandas
+scipy
+matplotlib
+seaborn
+torch
+torchvision
+python-Levenshtein
+tqdm
+argparse
+typing
