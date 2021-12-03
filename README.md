@@ -6,7 +6,7 @@ This is an **attention-based encoder-decoder model** transcribing speech utteran
 
 The overall architecture could be visualized as belows: (pics taken from the paper)
 
-<img src="pic/Speller.png" alt="drawing" width="200"/>
+<img src="pic/Speller.png" alt="drawing" width="500"/>
 
 ![avatar](pic/Speller.png)
 
